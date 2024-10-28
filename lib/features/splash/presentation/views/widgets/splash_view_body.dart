@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/core/utils/assets.dart';
+import 'package:shop_app/features/splash/presentation/views/widgets/custom_splash_text.dart';
 
 class SplashViewBody extends StatelessWidget {
   const SplashViewBody({super.key});
@@ -13,8 +14,9 @@ class SplashViewBody extends StatelessWidget {
         children: [
           Image.asset(
             Assets.splashImage,
-            scale: .6,
-          )
+            fit: BoxFit.cover,
+          ),
+          const CustomSplashText(),
         ],
       ),
     );
