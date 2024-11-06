@@ -13,7 +13,7 @@ class ShopApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Shop App',
       home: const HomeView(),
     );
   }
