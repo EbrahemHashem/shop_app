@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/features/home/presentation/views/home_view.dart';
+import 'package:shop_app/features/splash/presentation/views/splash_view.dart';
 
 void main() {
   runApp(const ShopApp());
@@ -14,7 +14,7 @@ class ShopApp extends StatelessWidget {
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Shop App',
-      home: const HomeView(),
+      home: const SplashView(),
     );
   }
 }
