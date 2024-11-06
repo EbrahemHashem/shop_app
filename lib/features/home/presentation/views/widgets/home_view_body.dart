@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/features/home/presentation/views/widgets/banners/custom_home_banners.dart';
 import 'package:shop_app/features/home/presentation/views/widgets/header/custom_home_header.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -11,10 +12,12 @@ class HomeViewBody extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           children: [
-            SizedBox(
-              height: 20,
-            ),
+            SizedBox(height: 20),
             CustomHomeHeader(),
+            SizedBox(height: 20),
+
+            CustomHomeBanners(),
+
             // DiscountBanner(),
             // PopularProducts(),
             // const SizedBox(height: 20),
