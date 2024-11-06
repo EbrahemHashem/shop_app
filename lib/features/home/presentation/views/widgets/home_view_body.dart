@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/features/home/presentation/views/widgets/banners/custom_home_banners.dart';
+import 'package:shop_app/features/home/presentation/views/custom_home_body.dart';
+import 'package:shop_app/features/home/presentation/views/widgets/custom_home_banners.dart';
 import 'package:shop_app/features/home/presentation/views/widgets/header/custom_home_header.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -15,13 +16,9 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(height: 20),
             CustomHomeHeader(),
             SizedBox(height: 20),
-
             CustomHomeBanners(),
-
-            // DiscountBanner(),
-            // PopularProducts(),
-            // const SizedBox(height: 20),
-            // RecentlyAddedProducts(),
+            SizedBox(height: 20),
+            CustomHomeBody(),
           ],
         ),
       ),
