@@ -9,7 +9,7 @@ sealed class LoginState extends Equatable {
 
 final class LoginInitial extends LoginState {}
 
-final class LoginLoadign extends LoginState {}
+final class LoginLoading extends LoginState {}
 
 final class LoginFailure extends LoginState {
   final String errMessage;

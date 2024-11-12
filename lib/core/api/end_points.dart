@@ -1,10 +1,11 @@
 class EndPoints {
-  static String baseUrl = "https://food-api-omega.vercel.app/api/v1/";
-  static String signIn = "user/signin";
-  static String signUp = "user/signup";
+  static String baseUrl = "https://student.valuxapps.com/api/";
+  static String signIn = "login";
+  static String signUp = "register";
 }
 
 class ApiKey {
+  static String data = 'data';
   static String status = "status";
   static String errorMessage = "ErrorMessage";
   static String email = "email";

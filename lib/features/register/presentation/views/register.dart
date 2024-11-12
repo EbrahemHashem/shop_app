@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/features/login/presentation/views/login.dart';
 
 class Register extends StatelessWidget {
   final _formKey = GlobalKey<FormState>();
@@ -107,7 +108,12 @@ class Register extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => const Login()),
+                          );
+                        },
                         child: Text.rich(
                           const TextSpan(
                             text: "Already have an account? ",

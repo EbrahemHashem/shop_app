@@ -1,8 +1,17 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shop_app/core/api/dio_consumer.dart';
+import 'package:shop_app/features/login/presentation/view_model/login_cubit/login_cubit.dart';
 import 'package:shop_app/features/splash/presentation/views/splash_view.dart';
 
 void main() {
-  runApp(const ShopApp());
+  runApp(BlocProvider(
+    create: (context) => LoginCubit(
+      DioConsumer(dio: Dio()),
+    ),
+    child: const ShopApp(),
+  ));
 }
 
 class ShopApp extends StatelessWidget {
