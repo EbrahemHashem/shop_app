@@ -11,12 +11,6 @@ void main() {
     BlocProvider(create: (context) => LoginCubit(DioConsumer(dio: Dio()))),
     BlocProvider(create: (context) => RegisterCubit(DioConsumer(dio: Dio()))),
   ], child: const ShopApp()));
-  //   BlocProvider(
-  //   create: (context) => LoginCubit(
-  //     DioConsumer(dio: Dio()),
-  //   ),
-  //   child: const ShopApp(),
-  // ));
 }
 
 class ShopApp extends StatelessWidget {

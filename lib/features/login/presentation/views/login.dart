@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/features/login/presentation/view_model/login_cubit/login_cubit.dart';
+import 'package:shop_app/features/login/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:shop_app/features/register/presentation/views/register.dart';
 
 class Login extends StatelessWidget {
@@ -37,52 +38,27 @@ class Login extends StatelessWidget {
                     child: Column(
                       children: [
                         // email
-                        TextFormField(
+                        CustomTextFormField(
                           controller: context.read<LoginCubit>().signInEmail,
-                          style: const TextStyle(color: Colors.amber),
-                          decoration: const InputDecoration(
-                            hintStyle: TextStyle(color: Colors.amber),
-                            hintText: 'Email',
-                            filled: true,
-                            fillColor: Color(0xFFF5FCF9),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 16.0 * 1.5, vertical: 16.0),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(50)),
-                            ),
-                          ),
+                          hintText: 'Email',
                           keyboardType: TextInputType.emailAddress,
                         ),
+
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          // password
-                          child: TextFormField(
-                            controller: context.read<LoginCubit>().signInPassword,
-                            style: const TextStyle(color: Colors.amber),
-                            obscureText: true,
-                            decoration: const InputDecoration(
-                              hintStyle: TextStyle(color: Colors.amber),
+                            padding: const EdgeInsets.symmetric(vertical: 16.0),
+                            // password
+                            child: CustomTextFormField(
+                              obscureText: true,
+                              controller: context.read<LoginCubit>().signInPassword,
                               hintText: 'Password',
-                              filled: true,
-                              fillColor: Color(0xFFF5FCF9),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 16.0 * 1.5, vertical: 16.0),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.all(Radius.circular(50)),
-                              ),
-                            ),
-                          ),
-                        ),
+                              keyboardType: TextInputType.text,
+                            )),
                         state is LoginLoading
                             ? const CircularProgressIndicator()
                             : ElevatedButton(
                                 onPressed: () {
                                   // navigate to home view
                                   context.read<LoginCubit>().signIn();
-                                  // Navigator.pushReplacement(
-                                  //   context,
-                                  //   MaterialPageRoute(builder: (context) => const HomeView()),
-                                  // );
                                 },
                                 style: ElevatedButton.styleFrom(
                                   elevation: 0,

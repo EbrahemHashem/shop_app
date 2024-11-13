@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shop_app/features/login/presentation/views/login.dart';
+import 'package:shop_app/features/login/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:shop_app/features/register/presentation/view_model/register_cubit/register_cubit.dart';
 
 class Register extends StatelessWidget {
@@ -35,88 +36,35 @@ class Register extends StatelessWidget {
                     key: context.read<RegisterCubit>().signUpFormKey,
                     child: Column(
                       children: [
-                        // full name
-                        TextFormField(
+                        // full name.
+                        CustomTextFormField(
                           controller: context.read<RegisterCubit>().signUpName,
-                          style: const TextStyle(color: Colors.amber),
-                          decoration: const InputDecoration(
-                            hintStyle: TextStyle(color: Colors.amber),
-                            hintText: 'Full name',
-                            filled: true,
-                            fillColor: Color(0xFFF5FCF9),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 16.0 * 1.5, vertical: 16.0),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(50)),
-                            ),
-                          ),
-                          onSaved: (name) {
-                            // Save it
-                          },
+                          hintText: 'Full name',
+                          keyboardType: TextInputType.text,
                         ),
                         const SizedBox(height: 16.0),
-
                         // phone
-                        TextFormField(
+                        CustomTextFormField(
                           controller: context.read<RegisterCubit>().signUpPhone,
+                          hintText: 'Phone',
                           keyboardType: TextInputType.phone,
-                          style: const TextStyle(color: Colors.amber),
-                          decoration: const InputDecoration(
-                            hintStyle: TextStyle(color: Colors.amber),
-                            hintText: 'Phone',
-                            filled: true,
-                            fillColor: Color(0xFFF5FCF9),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 16.0 * 1.5, vertical: 16.0),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(50)),
-                            ),
-                          ),
                         ),
                         const SizedBox(height: 16.0),
                         // email
-                        TextFormField(
+                        CustomTextFormField(
                           controller: context.read<RegisterCubit>().signUpEmail,
-                          style: const TextStyle(color: Colors.amber),
-                          decoration: const InputDecoration(
-                            hintStyle: TextStyle(color: Colors.amber),
-                            hintText: 'Email',
-                            filled: true,
-                            fillColor: Color(0xFFF5FCF9),
-                            contentPadding: EdgeInsets.symmetric(horizontal: 16.0 * 1.5, vertical: 16.0),
-                            border: OutlineInputBorder(
-                              borderSide: BorderSide.none,
-                              borderRadius: BorderRadius.all(Radius.circular(50)),
-                            ),
-                          ),
+                          hintText: 'Email',
                           keyboardType: TextInputType.emailAddress,
-                          onSaved: (email) {
-                            // Save it
-                          },
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          // password
-                          child: TextFormField(
-                            controller: context.read<RegisterCubit>().signUpPassword,
-                            style: const TextStyle(color: Colors.amber),
-                            decoration: const InputDecoration(
-                              hintStyle: TextStyle(color: Colors.amber),
+                            padding: const EdgeInsets.symmetric(vertical: 16.0),
+                            // password
+                            child: CustomTextFormField(
+                              controller: context.read<RegisterCubit>().signUpPassword,
                               hintText: 'Password',
-                              filled: true,
-                              fillColor: Color(0xFFF5FCF9),
-                              contentPadding: EdgeInsets.symmetric(horizontal: 16.0 * 1.5, vertical: 16.0),
-                              border: OutlineInputBorder(
-                                borderSide: BorderSide.none,
-                                borderRadius: BorderRadius.all(Radius.circular(50)),
-                              ),
-                            ),
-                            obscureText: true,
-                            onSaved: (passaword) {
-                              // Save it
-                            },
-                          ),
-                        ),
+                              keyboardType: TextInputType.text,
+                              obscureText: true,
+                            )),
                         // sign up button
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
